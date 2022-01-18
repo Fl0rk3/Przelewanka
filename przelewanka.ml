@@ -42,12 +42,12 @@ let przelewanka tab =
     let visited = Hashtbl.create 2137 in
     let start = Array.create n 0 in
     let queue = Queue.create () in
-        let step (state, steps) = 
-            if not (Hashtbl.mem visited state) then begin
-                Queue.add (state, steps) queue;
-                Hashtbl.add visited state ();
-            end
-        in
+    let step (state, steps) = 
+        if not (Hashtbl.mem visited state) then begin
+            Queue.add (state, steps) queue;
+            Hashtbl.add visited state ();
+        end
+    in
         step (start, 0);
 
         (* sprawdzanie wszystkich możliwości, przerwane gdy znajdzie rozwiązanie *)
